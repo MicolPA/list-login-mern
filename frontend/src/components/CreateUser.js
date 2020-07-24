@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
-import sweetalert from 'sweetalert';
 import swal from 'sweetalert';
 
-const URI = 'http://localhost:3000/api';
+const URI = process.env.API_URI ? process.env.API_URI : 'http://localhost:4000/api';
 
 export default class CreateUser extends Component {
     state = {
@@ -32,6 +31,7 @@ export default class CreateUser extends Component {
     async getUsers(){
         const res = await axios.get(URI + '/user');
         this.setState({users: res.data});
+        console.log(this.state.users);
     }
 
     handleChange = (e) =>{
