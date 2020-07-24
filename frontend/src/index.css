@@ -1,7 +1,13 @@
 #root{
   width: 100% !important;
+  height: 100% !important;
 }
 
 *{
   text-shadow: none;
 }
+html, body{
+  background: #343a40 !important;
+}
+html{height: 0 !important;}
+
