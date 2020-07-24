@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
+import sweetalert from 'sweetalert';
+import swal from 'sweetalert';
+
 const URI = 'http://localhost:3000/api';
 
 export default class CreateUser extends Component {
@@ -47,6 +50,7 @@ export default class CreateUser extends Component {
             last_name: this.state.last_name,
             password: this.state.password,
         });
+        swal('Success', 'User created successfully', 'success');
         this.cleanState();
         this.getUsers();
         console.log(user);
